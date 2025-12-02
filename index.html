@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fátima Rodrigues Estética Avançada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Logo Fátima Rodrigues Estética Avançada" class="logo-img">
+            <h1>Fátima Rodrigues Estética Avançada</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre a Clínica</h2>
+            <div class="sobre-conteudo">
+                <p>A Fátima Rodrigues Estética Avançada oferece tratamentos de beleza com alta qualidade e tecnologia, visando proporcionar a melhor experiência e resultados aos seus clientes.</p>
+                <!-- Imagem da Clínica -->
+                <img src="img/fatima.jpg" alt="Clínica Fátima Rodrigues Estética Avançada" class="img-sobre">
+            </div>
+        </div>
+    </section>    
+
+    <section id="servicos">
+        <div class="container">
+            <h2>Serviços</h2>
+            <div class="servicos-lista">
+                <div class="servico">
+                    <img src="img/spa-dos-pes.jpg" alt="Spa dos Pés" class="img-servico">
+                    <h3>Spa dos Pés</h3>
+                    <p>Tratamento relaxante para os pés, com produtos de alta qualidade.</p>
+                </div>
+                <div class="servico">
+                    <img src="img/pump.jpg" alt="Pump" class="img-servico">
+                    <h3>Pump</h3>
+                    <p>Massagem corporal intensiva para modelar e tonificar.</p>
+                </div>
+                <div class="servico">
+                    <img src="img/limpeza-de-pele.jpg" alt="Limpeza de Pele" class="img-servico">
+                    <h3>Limpeza de Pele</h3>
+                    <p>Tratamento para uma pele mais saudável e iluminada.</p>
+                </div>
+                <div class="servico">
+                    <img src="img/massagem-modeladora.jpg" alt="Massagem Modeladora" class="img-servico">
+                    <h3>Massagem Modeladora</h3>
+                    <p>Redução de medidas e relaxamento com técnicas especializadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Agende seu horário através do telefone (21) 97031-6108 ou pelo instagram <a>@fatimarodrigues077</a></p>
+            <a href="https://instagram.com/fatimarodrigues077" target="_blank">@fatimarodrigues077</a>
+
+            <h3>Agendamento Online</h3>
+            <form id="agendamento-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required> 
+
+    
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="procedimento">Procedimento:</label>
+                <select id="procedimento" required>
+                    <option value="">Selecione</option>
+                    <option value="Spa dos Pés">Spa dos Pés</option>
+                    <option value="Pump">Pump</option>
+                    <option value="Limpeza de Pele">Limpeza de Pele</option>
+                    <option value="Massagem Modeladora">Massagem Modeladora</option>
+                </select>
+    
+                <label for="data">Data:</label>
+                <input type="date" id="data" name= "data" required>
+    
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+    
+                <button type="submit">Agendar</button>
+            </form>
+    
+            <div class="confirmation" id="confirmation"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fátima Rodrigues Estética Avançada. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        const form = document.getElementById('agendamento-form');
+        const confirmation = document.getElementById('confirmation');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const procedimento = document.getElementById('procedimento').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+    
+            confirmation.textContent = `Obrigado, ${nome}! Seu procedimento de ${procedimento} foi agendado para ${data} às ${hora}.`;
+    
+            form.reset();
+        });
+    </script>
+    
+</body>
+</html>
